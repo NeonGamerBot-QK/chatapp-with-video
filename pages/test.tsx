@@ -54,15 +54,17 @@ const TestPage: NextPage = () => {
 
       getUserMedia({ video: true, audio: true }).then((stream) => {
 if(myVideo.current) {
-  myVideo.current.srcObject = stream;
-  myVideo.current?.play();
+  (myVideo.current as HTMLVideoElement).srcObject = stream;
+  (myVideo.current as HTMLVideoElement).play();
 }
         
         call.answer(stream);
 
         call.on('stream', (remoteStream) => {
-          friendVideo.current.srcObject = remoteStream;
-          friendVideo.current?.play();
+       if (friendVideo.current) {
+        (friendVideo.current as HTMLVideoElement) .srcObject = remoteStream;
+        (friendVideo.current as HTMLVideoElement).play();
+       }
         });
 
       });
@@ -187,12 +189,12 @@ setVideos((oldVids:any) => [...oldVids, video])
         //     }, 5000)
         //     return () => clearInterval(inter);
         //    }
-       return runVideo()
+      //  return runVideo()
     }, [mypeer, videos.length])
     const toggleVideo = () => setVideo(!uvideo);
     return (<>
   <button onClick={toggleVideo}> Get video </button>  
-  <video ref={videoRef}  autoPlay muted> </video>
+  <video ref={myVideo}  autoPlay muted> </video>
     <br />
     {videos.map((video:any, index: number) => {
         return (<div key={index}>
@@ -200,7 +202,7 @@ Number: {index} <br />
 {video}
         </div>)
     })}
-     <video ref={otherVideoRef} />
+     <video ref={friendVideo} />
         </>)
 }
 export default TestPage;
