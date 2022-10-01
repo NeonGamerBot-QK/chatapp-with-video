@@ -1,0 +1,12 @@
+- Make a homepage that has a navbar, and a backgroundcolor for the main section. Put in some content in the page. Think about what kind of project you want to propose for us to work on
+
+Argument of type '(socket: Socket) => void' is not assignable to parameter of type '(socket: Socket<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>) => void'.
+  Types of parameters 'socket' and 'socket' are incompatible.
+    Type 'Socket<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>' is missing the following properties from type 'Socket<DefaultEventsMap, DefaultEventsMap>': io, auth, receiveBuffer, sendBuffer, and 16 more.
+
+
+    Generic type 'Socket<ListenEvents, EmitEvents>' requires between 0 and 2 type arguments.
+    
+    Argument of type '(socket: Socket<ClientToServerEvents, ServerToClientEvents>) => void' is not assignable to parameter of type '(socket: Socket<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>) => void'.
+  Types of parameters 'socket' and 'socket' are incompatible.
+    Type 'Socket<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>' is missing the following properties from type 'Socket<ClientToServerEvents, ServerToClientEvents>': io, auth, receiveBuffer, sendBuffer, and 16 more.

@@ -9,14 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "bootstrap": "^5.2.0",
     "next": "12.2.5",
+    "peerjs": "^1.3.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-bootstrap": "^2.5.0",
+    "react-dom": "18.2.0",
+    "socket.io": "^4.5.2",
+    "socket.io-client": "^4.5.2",
+    "socket.io-server": "^1.0.0-b"
   },
   "devDependencies": {
     "@types/node": "18.7.14",
     "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",
+    "@types/socket.io": "^3.0.2",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
     "typescript": "4.8.2"

@@ -7,20 +7,20 @@ import styles from '../styles/Home.module.css'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import io, { Socket } from "socket.io-client";
-let socket:Socket | null;
-
+import io, { Socket} from "socket.io-client";
+import { useRouter } from 'next/router'
 type Message = {
   author: string;
   message: string;
 };
+let socket:Socket | null;
 const Home: NextPage = () => {
   // tut
-  const theDate:Date = new Date("10/10/2022")
+  const theDate:Date = new Date("10/1/2022")
   const todaysDate:Date = new Date();
   const [days, setDays] = useState(Math.round((theDate.getTime() - todaysDate.getTime()) / (24 * 60 * 60 * 1000)))
 
-  
+const router =   useRouter()
   const [username, setUsername] = useState("");
   const [typing, setTyping] = useState<string[]>([]);
   const [chosenUsername, setChosenUsername] = useState("");
@@ -38,7 +38,7 @@ const Home: NextPage = () => {
       console.log(msgs)
    setMessages(msgs)
     })
-    
+    console.debug(router.asPath.slice(1))
     socket.on("typing", (user: string, isTyping: boolean) => {
       if(isTyping) {
         setTyping((oldTyping) => [
@@ -77,7 +77,7 @@ const Home: NextPage = () => {
   };
   useEffect(() => {
 CallSocket()
-  }, [])
+  }, [CallSocket])
   useEffect(() => {
    /**
     * @see https://github.com/facebook/react/issues/14920

@@ -1,8 +1,8 @@
-.container {
+.mycontainer {
   padding: 0 2rem;
 }
 
-.main {
+.mymain {
   min-height: 100vh;
   padding: 4rem 0;
   flex: 1;
@@ -12,7 +12,7 @@
   align-items: center;
 }
 
-.footer {
+.myfooter {
   display: flex;
   flex: 1;
   padding: 2rem 0;
@@ -21,43 +21,43 @@
   align-items: center;
 }
 
-.footer a {
+.myfooter a {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
 }
 
-.title a {
+.mytitle a {
   color: #0070f3;
   text-decoration: none;
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
+.mytitle a:hover,
+.mytitle a:focus,
+.mytitle a:active {
   text-decoration: underline;
 }
 
-.title {
+.mytitle {
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
 }
 
-.title,
-.description {
+.mytitle,
+.mydescription {
   text-align: center;
 }
 
-.description {
+.mydescription {
   margin: 4rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
 }
 
-.code {
-  background: #fafafa;
+.mycode {
+  background: #222;
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
@@ -65,7 +65,7 @@
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
-.grid {
+.mygrid {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,7 +73,7 @@
   max-width: 800px;
 }
 
-.card {
+.mycard {
   margin: 1rem;
   padding: 1.5rem;
   text-align: left;
@@ -85,45 +85,45 @@
   max-width: 300px;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
+.mycard:hover,
+.mycard:focus,
+.mycard:active {
   color: #0070f3;
   border-color: #0070f3;
 }
 
-.card h2 {
+.mycard h2 {
   margin: 0 0 1rem 0;
   font-size: 1.5rem;
 }
 
-.card p {
+.mycard p {
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.5;
 }
 
-.logo {
+.mylogo {
   height: 1em;
   margin-left: 0.5rem;
 }
 
 @media (max-width: 600px) {
-  .grid {
+  .mygrid {
     width: 100%;
     flex-direction: column;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
+/* @media (prefers-color-scheme: dark) { */
+  .mycard,
+  .myfooter {
     border-color: #222;
   }
-  .code {
+  .mycode {
     background: #111;
   }
   .logo img {
     filter: invert(1);
   }
-}
+/* } */
